@@ -28,9 +28,22 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+        binding.smsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                문자 전송하기
+                String dialPhoneNum = binding.userPhoneNum.getText().toString();
+
+                Uri myUri = Uri.parse(String.format("smsto:%s",dialPhoneNum));
+                Intent myIntent = new Intent(Intent.ACTION_SENDTO,myUri);
+                myIntent.putExtra("sms_body","테스트 문자내용");
+                startActivity(myIntent);
+            }
+        });
         binding.callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+ //       전화 바로걸기=> 권한 문제로 앱이 죽어버림
                 String dialPhoneNum = binding.userPhoneNum.getText().toString();
 
                 Uri myUri = Uri.parse(String.format("tel:%s",dialPhoneNum));

@@ -96,6 +96,12 @@
             android:layout_height="wrap_content"
             android:text="전화걸기"
             android:layout_marginTop="10dp"/>
+        <Button
+            android:id="@+id/smsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="문자보내기"
+            android:layout_marginTop="10dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
